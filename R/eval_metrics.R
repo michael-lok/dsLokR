@@ -1,5 +1,5 @@
 #' Evaluate Area Under ROC Curve
-#' #' @details algorithm comes from \url{https://blog.revolutionanalytics.com/2017/03/auc-meets-u-stat.html},
+#' @details algorithm comes from \url{https://blog.revolutionanalytics.com/2017/03/auc-meets-u-stat.html},
 #' also from \url{https://github.com/mlr-org/mlr/blob/e710dd0ac84b5a6c8197f8902b330d5c5c92b26a/R/measures.R#L778}
 #' @param preds vector of predicted probabilities for response (positive class)
 #' @param actual binary vector of actual response
