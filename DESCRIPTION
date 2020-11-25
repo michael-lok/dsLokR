@@ -1,0 +1,19 @@
+Package: dsLokR
+Type: Package
+Title: Data Science Utility Tools/Functions
+Version: 0.1.0
+Author: Michael Lok
+Maintainer: Michael Lok <michaellokdmv@gmail.com>
+Description: dsLokR provides access to common data science tools
+             used in model training and performance evaluation.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+  data.table
+Suggests:
+  testthat,
+  assertthat,
+  rmarkdown,
+  knitr
+RoxygenNote: 7.1.0
