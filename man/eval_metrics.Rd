@@ -3,11 +3,14 @@
 \name{eval_metrics}
 \alias{eval_metrics}
 \alias{eval.auc}
+\alias{eval.acc}
 \alias{eval.sens}
 \alias{eval.spec}
 \title{Binary Classification Model Evaluation Metrics}
 \usage{
 eval.auc(preds, actual)
+
+eval.acc(preds.class, actual)
 
 eval.sens(preds.class, actual)
 

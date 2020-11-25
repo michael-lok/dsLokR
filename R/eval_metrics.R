@@ -41,6 +41,19 @@ eval.auc <- function(preds, actual) {
 
 #' @rdname eval_metrics
 #' @export
+eval.acc <- function(preds.class, actual) {
+  assertthat::assert_that(is.binary(actual) & is.binary(preds.class), # helper function in utils.R
+                          msg = "both preds.class and actual must be binary vector!")
+  assertthat::assert_that(length(preds.class) == length(actual),
+                          msg = "preds and actual not of the same length!")
+
+  with(data.frame(preds = preds.class,
+                  actual = actual),
+       sum(preds == actual)/length(actual))
+}
+
+#' @rdname eval_metrics
+#' @export
 eval.sens <- function(preds.class, actual) {
   assertthat::assert_that(is.binary(actual) & is.binary(preds.class), # helper function in utils.R
                           msg = "both preds.class and actual must be binary vector!")
@@ -64,4 +77,3 @@ eval.spec <- function(preds.class, actual) {
                   actual = actual),
        sum(preds == actual & actual == 0)/sum(actual == 0))
 }
-
