@@ -1,5 +1,4 @@
 #' Find Optimal Cutoff to Utilize in Classification Model
-#' @param preds
 #' @param preds vector of predicted probabilities for response (positive class)
 #' @param actual binary vector of actual response
 #' @param metric metric to be optimized for. Defaults to accuracy

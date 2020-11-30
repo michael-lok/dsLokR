@@ -29,17 +29,11 @@ eval.roc <- function(preds, actual, plot = TRUE) {
   assertthat::assert_that(length(preds) == length(actual),
                           msg = "preds and actual not of the same length!")
 
-  size <- length(actual)
-  n_pos <- sum(actual == 1)
-  n_neg <- length(actual) - n_pos
-  roc <- lapply(c(size:0) / size, FUN = function(x) {
-    pred.class <- as.integer(preds >= x)
-    data.frame(cutoff = x,
-               tpr = sum(pred.class == actual & actual == 1) / n_pos,
-               fpr = sum(pred.class != actual & pred.class == 1) / n_neg)
-  })
-  roc <- do.call("rbind", roc)
-
+  actual <- actual[order(preds, decreasing = TRUE)]
+  preds <- preds[order(preds, decreasing = TRUE)]
+  roc <- data.frame(cutoff = preds,
+                    tpr = cumsum(actual == 1)/sum(actual == 1),
+                    fpr = cumsum(actual == 0)/sum(actual == 0))
   if (plot) {
     roc_ggplot <- ggplot(roc, aes(x = fpr, y = tpr, color = cutoff)) +
       geom_step(size = 2)
