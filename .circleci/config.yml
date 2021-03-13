@@ -13,3 +13,4 @@ jobs:
           command: R CMD check . --no-manual
       - store_test_results:
           path: ..Rcheck/tests/
+          
