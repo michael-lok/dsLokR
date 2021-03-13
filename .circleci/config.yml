@@ -1,0 +1,16 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: michaellok4/r-mlok:latest
+    steps:
+      - checkout
+      - run:
+          name: Install package
+          command: Rscript -e "devtools::install(dependencies = TRUE)"
+      - run:
+          name: Run tests
+          command: R CMD check . --no-manual
+      - store_test_results:
+          path: ..Rcheck/tests/
+          
