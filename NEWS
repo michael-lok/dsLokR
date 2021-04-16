@@ -1,0 +1,26 @@
+dsLokR v0.1.1 (Release date: 2021-04-15)
+====================
+New functionality:
+
+* str_form()
+
+Documentation updates:
+
+* NEWS added to track version releases
+
+
+dsLokR v0.1.0 (Release date: 2021-03-12)
+====================
+New functionality:
+
+* eval.acc()
+* eval.auc()
+* eval.roc()
+* eval.sens()
+* eval.spec()
+* get.opt_cutoff()
+* sample.strat()
+
+Enhancements:
+
+* CircleCI integration to allow for automated testing
