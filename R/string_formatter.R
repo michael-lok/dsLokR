@@ -5,7 +5,7 @@
 #' @param ... key/value pairs that should be substituted into `txt`
 #' @return `txt` with correctly substituted values
 #' @export
-str.form <- function(txt, ...) {
+str_form <- function(txt, ...) {
 
   txt.keys = gsub("[\\{\\}]", "",
                   unlist(regmatches(txt, gregexpr("\\{\\{.*?\\}\\}", txt))))
